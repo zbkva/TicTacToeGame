@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		556A11C625B3BC8A000474CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A11C525B3BC8A000474CE /* AppDelegate.swift */; };
 		556A11C825B3BC8A000474CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A11C725B3BC8A000474CE /* SceneDelegate.swift */; };
-		556A11CA25B3BC8A000474CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A11C925B3BC8A000474CE /* ViewController.swift */; };
+		556A11CA25B3BC8A000474CE /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A11C925B3BC8A000474CE /* LandingViewController.swift */; };
 		556A11CD25B3BC8A000474CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556A11CB25B3BC8A000474CE /* Main.storyboard */; };
 		556A11CF25B3BC8D000474CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556A11CE25B3BC8D000474CE /* Assets.xcassets */; };
 		556A11D225B3BC8D000474CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556A11D025B3BC8D000474CE /* LaunchScreen.storyboard */; };
+		55C51CE325B3DB2800F026E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C51CE225B3DB2800F026E2 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		556A11C225B3BC8A000474CE /* TicTacToeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556A11C525B3BC8A000474CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556A11C725B3BC8A000474CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		556A11C925B3BC8A000474CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		556A11C925B3BC8A000474CE /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		556A11CC25B3BC8A000474CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		556A11CE25B3BC8D000474CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		556A11D125B3BC8D000474CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		556A11D325B3BC8D000474CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55C51CE225B3DB2800F026E2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				556A11C525B3BC8A000474CE /* AppDelegate.swift */,
 				556A11C725B3BC8A000474CE /* SceneDelegate.swift */,
-				556A11C925B3BC8A000474CE /* ViewController.swift */,
+				556A11C925B3BC8A000474CE /* LandingViewController.swift */,
 				556A11CB25B3BC8A000474CE /* Main.storyboard */,
 				556A11CE25B3BC8D000474CE /* Assets.xcassets */,
 				556A11D025B3BC8D000474CE /* LaunchScreen.storyboard */,
 				556A11D325B3BC8D000474CE /* Info.plist */,
+				55C51CE225B3DB2800F026E2 /* MainViewController.swift */,
 			);
 			path = TicTacToeGame;
 			sourceTree = "<group>";
@@ -137,9 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				556A11CA25B3BC8A000474CE /* ViewController.swift in Sources */,
+				556A11CA25B3BC8A000474CE /* LandingViewController.swift in Sources */,
 				556A11C625B3BC8A000474CE /* AppDelegate.swift in Sources */,
 				556A11C825B3BC8A000474CE /* SceneDelegate.swift in Sources */,
+				55C51CE325B3DB2800F026E2 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

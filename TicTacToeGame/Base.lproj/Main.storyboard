@@ -1,24 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LlT-Xj-m7A">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LandingPage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="LandingPage" customClass="LandingViewController" customModule="TicTacToeGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graphPaperBg" translatesAutoresizingMaskIntoConstraints="NO" id="t7K-Br-1Hv">
+                                <rect key="frame" x="0.0" y="-6" width="414" height="902"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rXx-Ua-LdX">
+                                <rect key="frame" x="57" y="84" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="4ZP-rW-3py"/>
+                                    <constraint firstAttribute="height" constant="150" id="cfk-Br-ria"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-MS-VqC">
+                                <rect key="frame" x="20" y="383" width="374" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhY-6f-TUA">
+                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="130"/>
+                                        <state key="normal" title="Button" image="TicTacToeCrossSmall-02-2"/>
+                                        <connections>
+                                            <action selector="CrossChoiceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mbo-T8-Y56"/>
+                                            <segue destination="cQi-6B-ZJe" kind="show" id="0J5-w0-hsP"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OR" translatesAutoresizingMaskIntoConstraints="NO" id="epi-nE-Abj">
+                                        <rect key="frame" x="124.5" y="0.0" width="125" height="130"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNI-H4-1xf">
+                                        <rect key="frame" x="249.5" y="0.0" width="124.5" height="130"/>
+                                        <state key="normal" title="Button" image="TicTacToeCircleSmall-06-2"/>
+                                        <connections>
+                                            <action selector="CircleChoiceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gzX-Y4-Hkh"/>
+                                            <segue destination="cQi-6B-ZJe" kind="show" id="4zJ-oy-DoX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="QLf-Wu-5dg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Veu-MS-VqC" secondAttribute="trailing" constant="20" id="1bG-IR-Md4"/>
+                            <constraint firstItem="Veu-MS-VqC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C0H-g3-YVV"/>
+                            <constraint firstItem="rXx-Ua-LdX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="ERO-kR-9Ef"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="t7K-Br-1Hv" secondAttribute="bottom" constant="-34" id="Olu-yF-X64"/>
+                            <constraint firstItem="t7K-Br-1Hv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="TwM-Jj-LCl"/>
+                            <constraint firstItem="rXx-Ua-LdX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jqj-L1-H1T"/>
+                            <constraint firstItem="Veu-MS-VqC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="juQ-AH-Zqt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t7K-Br-1Hv" secondAttribute="trailing" constant="-20" id="mai-va-cOE"/>
+                            <constraint firstItem="t7K-Br-1Hv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-50" id="pen-nX-Imu"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="YuI-WQ-5Jv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="208.69565217391306" y="93.75"/>
+        </scene>
+        <!--MainPage-->
+        <scene sceneID="Icu-2O-OhN">
+            <objects>
+                <viewController id="cQi-6B-ZJe" userLabel="MainPage" customClass="MainViewController" customModule="TicTacToeGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BNz-cU-LcA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graphPaperBg" translatesAutoresizingMaskIntoConstraints="NO" id="Wjb-Yv-vh3">
+                                <rect key="frame" x="0.0" y="-4" width="414" height="900"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="kOe-Ft-qHu">
+                                <rect key="frame" x="57" y="84" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ut9-du-00V"/>
+                                    <constraint firstAttribute="height" constant="150" id="v3j-M3-Ebp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TicTacToeGrid-1" translatesAutoresizingMaskIntoConstraints="NO" id="wDv-UF-fcI">
+                                <rect key="frame" x="0.0" y="308" width="414" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="tag-uI-Iwo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5i-a9-k4m">
+                                <rect key="frame" x="0.0" y="321" width="131" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="0, 0"/>
+                                <connections>
+                                    <action selector="zeroZeroTapped:" destination="cQi-6B-ZJe" eventType="touchUpInside" id="b9H-3Z-57u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ4-zb-Yg5">
+                                <rect key="frame" x="139" y="593" width="130" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1, 2"/>
+                                <connections>
+                                    <action selector="oneTwoTapped:" destination="cQi-6B-ZJe" eventType="touchUpInside" id="8bN-CI-5jZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urn-hD-qIV">
+                                <rect key="frame" x="0.0" y="601" width="136" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="0, 2"/>
+                                <connections>
+                                    <action selector="zeroTwoTapped:" destination="cQi-6B-ZJe" eventType="touchUpInside" id="Et1-hB-JLz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qc-mF-cT9">
+                                <rect key="frame" x="271" y="451" width="143" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="2, 1"/>
+                                <connections>
+                                    <action selector="twoOneTapped:" destination="cQi-6B-ZJe" eventType="touchUpInside" id="vuO-A7-AJV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhX-bf-KxZ">
+                                <rect key="frame" x="0.0" y="460" width="136" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="0, 1"/>
+                                <connections>
+                                    <action selector="zeroOneTapped:" destination="cQi-6B-ZJe" eventType="touchUpInside" id="Vji-02-nfo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0t-y9-L0N">
+                                <rect key="frame" x="271" y="308" width="143" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="2, 0"/>
+                                <connections>
+                                    <action selector="twoZeroTapped:" destination="cQi-6B-ZJe" eventType="touchUpInside" id="wJF-LY-mHJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z5-PS-9x6">
+                                <rect key="frame" x="139" y="321" width="130" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1, 0"/>
+                                <connections>
+                                    <action selector="oneZeroTapped:" destination="cQi-6B-ZJe" eventType="touchUpInside" id="ATY-wL-a0G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-Z1-eXd">
+                                <rect key="frame" x="139" y="451" width="130" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="1, 1"/>
+                                <connections>
+                                    <action selector="oneOneTapped:" destination="cQi-6B-ZJe" eventType="touchUpInside" id="Txe-Ow-GHW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohI-qc-DF1">
+                                <rect key="frame" x="271" y="585" width="143" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="2, 2"/>
+                                <connections>
+                                    <action selector="twoTwoTapped:" destination="cQi-6B-ZJe" eventType="touchUpInside" id="Kaz-81-NCA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rY5-r3-vOb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kOe-Ft-qHu" firstAttribute="top" secondItem="rY5-r3-vOb" secondAttribute="top" constant="40" id="33m-OG-2s8"/>
+                            <constraint firstItem="rY5-r3-vOb" firstAttribute="trailing" secondItem="kOe-Ft-qHu" secondAttribute="trailing" constant="57" id="C3t-Jw-3Lx"/>
+                            <constraint firstAttribute="trailing" secondItem="wDv-UF-fcI" secondAttribute="trailing" id="O31-Xw-1gH"/>
+                            <constraint firstItem="wDv-UF-fcI" firstAttribute="leading" secondItem="BNz-cU-LcA" secondAttribute="leading" id="cLI-Oo-9Xr"/>
+                            <constraint firstItem="kOe-Ft-qHu" firstAttribute="leading" secondItem="rY5-r3-vOb" secondAttribute="leading" constant="57" id="okH-gC-qvJ"/>
+                            <constraint firstItem="wDv-UF-fcI" firstAttribute="centerY" secondItem="BNz-cU-LcA" secondAttribute="centerY" constant="60" id="ygK-XS-g3E"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WTf-cE-8ut"/>
+                    <connections>
+                        <outlet property="oneOne" destination="KwR-Z1-eXd" id="z2Y-kc-7um"/>
+                        <outlet property="oneTwo" destination="lQ4-zb-Yg5" id="6CT-Bc-pDb"/>
+                        <outlet property="oneZero" destination="9z5-PS-9x6" id="0Vu-u0-D08"/>
+                        <outlet property="twoOne" destination="2qc-mF-cT9" id="add-DE-oul"/>
+                        <outlet property="twoTwo" destination="ohI-qc-DF1" id="rgR-aq-7we"/>
+                        <outlet property="twoZero" destination="g0t-y9-L0N" id="6uO-qK-xw0"/>
+                        <outlet property="zeroOne" destination="vhX-bf-KxZ" id="gDl-1Y-KcG"/>
+                        <outlet property="zeroTwo" destination="Urn-hD-qIV" id="r92-4x-op8"/>
+                        <outlet property="zeroZero" destination="s5i-a9-k4m" id="4yG-4B-t4Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAS-Kh-JdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="G1A-DM-K4a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="LlT-Xj-m7A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T7b-Kx-o3H">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lKg-Hf-KaP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HcL-tS-Yqg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-665.21739130434787" y="93.75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0J5-w0-hsP"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Logo" width="980" height="699"/>
+        <image name="OR" width="876" height="876"/>
+        <image name="TicTacToeCircleSmall-06-2" width="935" height="889"/>
+        <image name="TicTacToeCrossSmall-02-2" width="988" height="909"/>
+        <image name="TicTacToeGrid-1" width="2319" height="2113"/>
+        <image name="graphPaperBg" width="1314" height="1866"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
