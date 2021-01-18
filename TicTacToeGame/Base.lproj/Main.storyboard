@@ -27,7 +27,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-MS-VqC">
-                                <rect key="frame" x="20" y="383" width="374" height="130"/>
+                                <rect key="frame" x="20" y="403" width="374" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhY-6f-TUA">
                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="130"/>
@@ -63,7 +63,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="t7K-Br-1Hv" secondAttribute="bottom" constant="-34" id="Olu-yF-X64"/>
                             <constraint firstItem="t7K-Br-1Hv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="TwM-Jj-LCl"/>
                             <constraint firstItem="rXx-Ua-LdX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jqj-L1-H1T"/>
-                            <constraint firstItem="Veu-MS-VqC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="juQ-AH-Zqt"/>
+                            <constraint firstItem="Veu-MS-VqC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="juQ-AH-Zqt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="t7K-Br-1Hv" secondAttribute="trailing" constant="-20" id="mai-va-cOE"/>
                             <constraint firstItem="t7K-Br-1Hv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-50" id="pen-nX-Imu"/>
                         </constraints>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urn-hD-qIV">
-                                <rect key="frame" x="0.0" y="601" width="136" height="107"/>
+                                <rect key="frame" x="0.0" y="605" width="136" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="0, 2"/>
                                 <connections>
