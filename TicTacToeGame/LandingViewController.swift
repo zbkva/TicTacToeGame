@@ -12,6 +12,14 @@ class LandingViewController: UIViewController {
     //@IBOutlet weak var CrossChoiceBtn: UIButton!
     //@IBOutlet weak var CircleChoiceBtn: UIButton!
     static var choice: Bool = true
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .all
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

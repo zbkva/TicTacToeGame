@@ -21,17 +21,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var twoOne: UIButton!
     @IBOutlet weak var twoTwo: UIButton!
     var chosen = LandingViewController.choice
-    var isChosenZeroZero = false
-    var isChosenZeroOne = false
-    var isChosenZeroTwo = false
-    var isChosenOneZero = false
-    var isChosenOneOne = false
-    var isChosenOneTwo = false
-    var isChosenTwoZero = false
-    var isChosenTwoOne = false
-    var isChosenTwoTwo = false
     
-    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .all
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +139,6 @@ class MainViewController: UIViewController {
             if(zeroZero.image(for: .normal) == nil){
                 zeroZero.setImage( UIImage.init(named: getComputersSign()), for: .normal)
                 zeroZero.accessibilityLabel = getComputersSign()
-                isChosenZeroZero = true
             }
             else {
                 computersMove()
@@ -153,7 +149,6 @@ class MainViewController: UIViewController {
             if(zeroOne.image(for: .normal) == nil){
                 zeroOne.setImage( UIImage.init(named: getComputersSign()), for: .normal)
                 zeroOne.accessibilityLabel = getComputersSign()
-                isChosenZeroOne = true
             }
             else {
                 computersMove()
@@ -164,7 +159,6 @@ class MainViewController: UIViewController {
             if(zeroTwo.image(for: .normal) == nil){
                 zeroTwo.setImage( UIImage.init(named: getComputersSign()), for: .normal)
                 zeroTwo.accessibilityLabel = getComputersSign()
-                isChosenZeroTwo = true
             }
             else {
                 computersMove()
@@ -175,7 +169,6 @@ class MainViewController: UIViewController {
             if(oneZero.image(for: .normal) == nil){
                 oneZero.setImage( UIImage.init(named: getComputersSign()), for: .normal)
                 oneZero.accessibilityLabel = getComputersSign()
-                isChosenOneZero = true
             }
             else {
                 computersMove()
@@ -186,7 +179,6 @@ class MainViewController: UIViewController {
             if(oneOne.image(for: .normal) == nil){
                 oneOne.setImage( UIImage.init(named: getComputersSign()), for: .normal)
                 oneOne.accessibilityLabel = getComputersSign()
-                isChosenOneOne = true
             }
             else {
                 computersMove()
@@ -197,7 +189,6 @@ class MainViewController: UIViewController {
             if(oneTwo.image(for: .normal) == nil){
                 oneTwo.setImage( UIImage.init(named: getComputersSign()), for: .normal)
                 oneTwo.accessibilityLabel = getComputersSign()
-                isChosenOneTwo = true
             }
             else {
                 computersMove()
@@ -208,7 +199,6 @@ class MainViewController: UIViewController {
             if(twoZero.image(for: .normal) == nil){
                 twoZero.setImage( UIImage.init(named: getComputersSign()), for: .normal)
                 twoZero.accessibilityLabel = getComputersSign()
-                isChosenTwoZero = true
             }
             else {
                 computersMove()
@@ -219,7 +209,6 @@ class MainViewController: UIViewController {
             if(twoOne.image(for: .normal) == nil){
                 twoOne.setImage( UIImage.init(named: getComputersSign()), for: .normal)
                 twoOne.accessibilityLabel = getComputersSign()
-                isChosenTwoOne = true
             }
             else {
                 computersMove()
@@ -230,7 +219,6 @@ class MainViewController: UIViewController {
             if(twoTwo.image(for: .normal) == nil){
                 twoTwo.setImage( UIImage.init(named: getComputersSign()), for: .normal)
                 twoTwo.accessibilityLabel = getComputersSign()
-                isChosenTwoTwo = true
             }
             else {
                 computersMove()
@@ -289,7 +277,6 @@ class MainViewController: UIViewController {
         if(zeroZero.image(for: .normal) == nil){
             zeroZero.setImage( UIImage.init(named: getSign()), for: .normal)
             zeroZero.accessibilityLabel = getSign()
-            isChosenZeroZero = true
             if (checkColumns() || checkRows() || checkDiagonals()){
                 showPopUp(1)
                 return
@@ -318,7 +305,6 @@ class MainViewController: UIViewController {
         if(zeroOne.image(for: .normal) == nil){
             zeroOne.setImage( UIImage.init(named: getSign()), for: .normal)
             zeroOne.accessibilityLabel = getSign()
-            isChosenZeroOne = true
             if (checkColumns() || checkRows() || checkDiagonals()){
                 showPopUp(1)
                 return
@@ -346,7 +332,6 @@ class MainViewController: UIViewController {
         if(zeroTwo.image(for: .normal) == nil){
             zeroTwo.setImage( UIImage.init(named: getSign()), for: .normal)
             zeroTwo.accessibilityLabel = getSign()
-            isChosenZeroTwo = true
             if (checkColumns() || checkRows() || checkDiagonals()){
                 showPopUp(1)
                 return
@@ -374,7 +359,6 @@ class MainViewController: UIViewController {
         if(oneZero.image(for: .normal) == nil){
             oneZero.setImage( UIImage.init(named: getSign()), for: .normal)
             oneZero.accessibilityLabel = getSign()
-            isChosenOneZero = true
             if (checkColumns() || checkRows() || checkDiagonals()){
                 showPopUp(1)
                 return
@@ -402,7 +386,6 @@ class MainViewController: UIViewController {
         if(oneOne.image(for: .normal) == nil){
             oneOne.setImage( UIImage.init(named: getSign()), for: .normal)
             oneOne.accessibilityLabel = getSign()
-            isChosenOneOne = true
             if (checkColumns() || checkRows() || checkDiagonals()){
                 showPopUp(1)
                 return
@@ -430,7 +413,6 @@ class MainViewController: UIViewController {
         if(oneTwo.image(for: .normal) == nil){
             oneTwo.setImage( UIImage.init(named: getSign()), for: .normal)
             oneTwo.accessibilityLabel = getSign()
-            isChosenOneTwo = true
             if (checkColumns() || checkRows() || checkDiagonals()){
                 showPopUp(1)
                 return
@@ -458,7 +440,6 @@ class MainViewController: UIViewController {
         if(twoZero.image(for: .normal) == nil){
             twoZero.setImage( UIImage.init(named: getSign()), for: .normal)
             twoZero.accessibilityLabel = getSign()
-            isChosenTwoZero = true
             if (checkColumns() || checkRows() || checkDiagonals()){
                 showPopUp(1)
                 return
@@ -486,7 +467,6 @@ class MainViewController: UIViewController {
         if(twoOne.image(for: .normal) == nil){
             twoOne.setImage( UIImage.init(named: getSign()), for: .normal)
             twoOne.accessibilityLabel = getSign()
-            isChosenTwoOne = true
             if (checkColumns() || checkRows() || checkDiagonals()){
                 showPopUp(1)
                 return
@@ -514,7 +494,6 @@ class MainViewController: UIViewController {
         if(twoTwo.image(for: .normal) == nil){
             twoTwo.setImage( UIImage.init(named: getSign()), for: .normal)
             twoTwo.accessibilityLabel = getSign()
-            isChosenTwoTwo = true
             if (checkColumns() || checkRows() || checkDiagonals()){
                 showPopUp(1)
                 return
