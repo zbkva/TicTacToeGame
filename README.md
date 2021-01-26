@@ -1,4 +1,4 @@
 # Tic Tac Toe
 
-###### <img src="/presentation.gif" alt="Presentation" style="zoom:25%;" />
+###### <img src="https://github.com/zbkva/TicTacToeGame/blob/main/presentation.gif" alt="Presentation" style="zoom:25%;" />
 
