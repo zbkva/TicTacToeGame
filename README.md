@@ -1,3 +1,4 @@
 # Tic Tac Toe
 
-###### <img src="/Users/anastasiia/Downloads/toGitHub.gif" alt="toGitHub" style="zoom:25%;" />
+###### <img src="/presentation.gif" alt="Presentation" style="zoom:25%;" />
+
