@@ -52,64 +52,87 @@ class MainViewController: UIViewController {
     }
     
     //checks for the same sign in three possible columns
-    func checkColumns() {
+    func checkColumns() -> Bool {
         if(
             (
-            zeroZero.imageView?.image == UIImage(named: getSign()) &&
-            zeroOne.imageView?.image == UIImage(named: getSign()) &&
-            zeroTwo.imageView?.image == UIImage(named: getSign())
+                zeroZero.accessibilityLabel != nil &&
+                zeroOne.accessibilityLabel != nil &&
+                zeroTwo.accessibilityLabel != nil &&
+                zeroZero.accessibilityLabel == zeroOne.accessibilityLabel &&
+                zeroOne.accessibilityLabel == zeroTwo.accessibilityLabel
             ) ||
             (
-            oneZero.imageView?.image == UIImage(named: getSign()) &&
-            oneOne.imageView?.image == UIImage(named: getSign()) &&
-            oneTwo.imageView?.image == UIImage(named: getSign())
+                oneZero.accessibilityLabel != nil &&
+                oneOne.accessibilityLabel != nil &&
+                oneTwo.accessibilityLabel != nil &&
+                oneZero.accessibilityLabel==oneOne.accessibilityLabel &&
+                oneOne.accessibilityLabel==oneTwo.accessibilityLabel
             ) ||
             (
-            twoZero.imageView?.image == UIImage(named: getSign()) &&
-            twoOne.imageView?.image == UIImage(named: getSign()) &&
-            twoTwo.imageView?.image == UIImage(named: getSign())
+                twoZero.accessibilityLabel != nil &&
+                twoOne.accessibilityLabel != nil &&
+                twoTwo.accessibilityLabel != nil &&
+                twoZero.accessibilityLabel==twoOne.accessibilityLabel &&
+                twoOne.accessibilityLabel==twoTwo.accessibilityLabel
             )
         ){
-            print("Column Done")
+            return true
+        }
+        else{
+            return false
         }
     }
     
-    func checkRows() {
+    //checks for the same sign in three possible rows
+    func checkRows() -> Bool {
         if(
             (
-            zeroZero.imageView?.image == UIImage(named: getSign()) &&
-            oneZero.imageView?.image == UIImage(named: getSign()) &&
-            twoZero.imageView?.image == UIImage(named: getSign())
+                zeroZero.accessibilityLabel != nil &&
+                oneZero.accessibilityLabel != nil &&
+                twoZero.accessibilityLabel != nil &&
+                zeroZero.accessibilityLabel==oneZero.accessibilityLabel && oneZero.accessibilityLabel==twoZero.accessibilityLabel
             ) ||
             (
-            zeroOne.imageView?.image == UIImage(named: getSign()) &&
-            oneOne.imageView?.image == UIImage(named: getSign()) &&
-            twoOne.imageView?.image == UIImage(named: getSign())
+                zeroOne.accessibilityLabel != nil &&
+                oneOne.accessibilityLabel != nil &&
+                twoOne.accessibilityLabel != nil &&
+                zeroOne.accessibilityLabel==oneOne.accessibilityLabel && oneOne.accessibilityLabel==twoOne.accessibilityLabel
             ) ||
             (
-            zeroTwo.imageView?.image == UIImage(named: getSign()) &&
-            oneTwo.imageView?.image == UIImage(named: getSign()) &&
-            twoTwo.imageView?.image == UIImage(named: getSign())
+                zeroTwo.accessibilityLabel != nil &&
+                oneTwo.accessibilityLabel != nil &&
+                twoTwo.accessibilityLabel != nil &&
+                zeroTwo.accessibilityLabel==oneTwo.accessibilityLabel && oneTwo.accessibilityLabel==twoTwo.accessibilityLabel
             )
         ){
-            print("Row Done")
+            return true
+        }
+        else{
+            return false
         }
     }
     
-    func checkDiagonals() {
+    func checkDiagonals() -> Bool {
         if(
             (
-            zeroTwo.imageView?.image == UIImage(named: getSign()) &&
-            oneOne.imageView?.image == UIImage(named: getSign()) &&
-            twoZero.imageView?.image == UIImage(named: getSign())
+                zeroTwo.accessibilityLabel != nil &&
+                oneOne.accessibilityLabel != nil &&
+                twoZero.accessibilityLabel != nil &&
+                zeroTwo.accessibilityLabel==oneOne.accessibilityLabel &&
+                oneOne.accessibilityLabel==twoZero.accessibilityLabel
             ) ||
             (
-            zeroZero.imageView?.image == UIImage(named: getSign()) &&
-            oneOne.imageView?.image == UIImage(named: getSign()) &&
-            twoTwo.imageView?.image == UIImage(named: getSign())
+                zeroZero.accessibilityLabel != nil &&
+                oneOne.accessibilityLabel != nil &&
+                twoTwo.accessibilityLabel != nil &&
+                zeroZero.accessibilityLabel==oneOne.accessibilityLabel &&
+                oneOne.accessibilityLabel==twoTwo.accessibilityLabel
             )
         ){
-            print("Diagonal Done")
+            return true
+        }
+        else{
+            return false
         }
     }
     
@@ -118,6 +141,7 @@ class MainViewController: UIViewController {
         if(rand == 1){
             if(zeroZero.image(for: .normal) == nil){
                 zeroZero.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                zeroZero.accessibilityLabel = getComputersSign()
                 isChosenZeroZero = true
             }
             else {
@@ -128,6 +152,7 @@ class MainViewController: UIViewController {
         if(rand == 2){
             if(zeroOne.image(for: .normal) == nil){
                 zeroOne.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                zeroOne.accessibilityLabel = getComputersSign()
                 isChosenZeroOne = true
             }
             else {
@@ -138,6 +163,7 @@ class MainViewController: UIViewController {
         if(rand == 3){
             if(zeroTwo.image(for: .normal) == nil){
                 zeroTwo.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                zeroTwo.accessibilityLabel = getComputersSign()
                 isChosenZeroTwo = true
             }
             else {
@@ -148,6 +174,7 @@ class MainViewController: UIViewController {
         if(rand == 4){
             if(oneZero.image(for: .normal) == nil){
                 oneZero.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                oneZero.accessibilityLabel = getComputersSign()
                 isChosenOneZero = true
             }
             else {
@@ -158,6 +185,7 @@ class MainViewController: UIViewController {
         if(rand == 5){
             if(oneOne.image(for: .normal) == nil){
                 oneOne.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                oneOne.accessibilityLabel = getComputersSign()
                 isChosenOneOne = true
             }
             else {
@@ -168,6 +196,7 @@ class MainViewController: UIViewController {
         if(rand == 6){
             if(oneTwo.image(for: .normal) == nil){
                 oneTwo.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                oneTwo.accessibilityLabel = getComputersSign()
                 isChosenOneTwo = true
             }
             else {
@@ -178,6 +207,7 @@ class MainViewController: UIViewController {
         if(rand == 7){
             if(twoZero.image(for: .normal) == nil){
                 twoZero.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                twoZero.accessibilityLabel = getComputersSign()
                 isChosenTwoZero = true
             }
             else {
@@ -188,6 +218,7 @@ class MainViewController: UIViewController {
         if(rand == 8){
             if(twoOne.image(for: .normal) == nil){
                 twoOne.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                twoOne.accessibilityLabel = getComputersSign()
                 isChosenTwoOne = true
             }
             else {
@@ -198,6 +229,7 @@ class MainViewController: UIViewController {
         if(rand == 9){
             if(twoTwo.image(for: .normal) == nil){
                 twoTwo.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                twoTwo.accessibilityLabel = getComputersSign()
                 isChosenTwoTwo = true
             }
             else {
@@ -225,15 +257,53 @@ class MainViewController: UIViewController {
         }
     }
     
+    func goHome (alert: UIAlertAction!) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func showPopUp(_ winner: Int) {
+        if(winner==1){
+            let alert = UIAlertController(title: "You Won :)", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Play Again",
+                                          style: .default,
+                                          handler: goHome))
+            self.present(alert, animated: true)
+        }
+        else if(winner==2){
+            let alert = UIAlertController(title: "You Lost :(", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Play Again",
+                                          style: .default,
+                                          handler: goHome))
+            self.present(alert, animated: true)
+        }
+        else{
+            let alert = UIAlertController(title: "It's a draw :/", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Play Again",
+                                          style: .default,
+                                          handler: goHome))
+            self.present(alert, animated: true)
+        }
+    }
     
     @IBAction func zeroZeroTapped(_ sender: UIButton) {
         if(zeroZero.image(for: .normal) == nil){
             zeroZero.setImage( UIImage.init(named: getSign()), for: .normal)
+            zeroZero.accessibilityLabel = getSign()
             isChosenZeroZero = true
-            checkColumns()
-            checkRows()
-            checkDiagonals()
-            computersMove()
+            if (checkColumns() || checkRows() || checkDiagonals()){
+                showPopUp(1)
+                return
+            }
+            if (isAllDone()) {
+                showPopUp(3)
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.computersMove()
+                if (self.checkColumns() || self.checkRows() || self.checkDiagonals()){
+                    self.showPopUp(2)
+                }
+            }
         }
         else{
             print("This cell has a sign already, try another one")
@@ -247,11 +317,22 @@ class MainViewController: UIViewController {
     @IBAction func zeroOneTapped(_ sender: Any) {
         if(zeroOne.image(for: .normal) == nil){
             zeroOne.setImage( UIImage.init(named: getSign()), for: .normal)
+            zeroOne.accessibilityLabel = getSign()
             isChosenZeroOne = true
-            checkColumns()
-            checkRows()
-            checkDiagonals()
-            computersMove()
+            if (checkColumns() || checkRows() || checkDiagonals()){
+                showPopUp(1)
+                return
+            }
+            if (isAllDone()) {
+                showPopUp(3)
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.computersMove()
+                if (self.checkColumns() || self.checkRows() || self.checkDiagonals()){
+                    self.showPopUp(2)
+                }
+            }
         }
         else{
             print("This cell has a sign already, try another one")
@@ -264,11 +345,22 @@ class MainViewController: UIViewController {
     @IBAction func zeroTwoTapped(_ sender: Any) {
         if(zeroTwo.image(for: .normal) == nil){
             zeroTwo.setImage( UIImage.init(named: getSign()), for: .normal)
+            zeroTwo.accessibilityLabel = getSign()
             isChosenZeroTwo = true
-            checkColumns()
-            checkRows()
-            checkDiagonals()
-            computersMove()
+            if (checkColumns() || checkRows() || checkDiagonals()){
+                showPopUp(1)
+                return
+            }
+            if (isAllDone()) {
+                showPopUp(3)
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.computersMove()
+                if (self.checkColumns() || self.checkRows() || self.checkDiagonals()){
+                    self.showPopUp(2)
+                }
+            }
         }
         else{
             print("This cell has a sign already, try another one")
@@ -281,11 +373,22 @@ class MainViewController: UIViewController {
     @IBAction func oneZeroTapped(_ sender: Any) {
         if(oneZero.image(for: .normal) == nil){
             oneZero.setImage( UIImage.init(named: getSign()), for: .normal)
+            oneZero.accessibilityLabel = getSign()
             isChosenOneZero = true
-            checkColumns()
-            checkRows()
-            checkDiagonals()
-            computersMove()
+            if (checkColumns() || checkRows() || checkDiagonals()){
+                showPopUp(1)
+                return
+            }
+            if (isAllDone()) {
+                showPopUp(3)
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.computersMove()
+                if (self.checkColumns() || self.checkRows() || self.checkDiagonals()){
+                    self.showPopUp(2)
+                }
+            }
         }
         else{
             print("This cell has a sign already, try another one")
@@ -298,11 +401,22 @@ class MainViewController: UIViewController {
     @IBAction func oneOneTapped(_ sender: Any) {
         if(oneOne.image(for: .normal) == nil){
             oneOne.setImage( UIImage.init(named: getSign()), for: .normal)
+            oneOne.accessibilityLabel = getSign()
             isChosenOneOne = true
-            checkColumns()
-            checkRows()
-            checkDiagonals()
-            computersMove()
+            if (checkColumns() || checkRows() || checkDiagonals()){
+                showPopUp(1)
+                return
+            }
+            if (isAllDone()) {
+                showPopUp(3)
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.computersMove()
+                if (self.checkColumns() || self.checkRows() || self.checkDiagonals()){
+                    self.showPopUp(2)
+                }
+            }
         }
         else{
             print("This cell has a sign already, try another one")
@@ -315,11 +429,22 @@ class MainViewController: UIViewController {
     @IBAction func oneTwoTapped(_ sender: Any) {
         if(oneTwo.image(for: .normal) == nil){
             oneTwo.setImage( UIImage.init(named: getSign()), for: .normal)
+            oneTwo.accessibilityLabel = getSign()
             isChosenOneTwo = true
-            checkColumns()
-            checkRows()
-            checkDiagonals()
-            computersMove()
+            if (checkColumns() || checkRows() || checkDiagonals()){
+                showPopUp(1)
+                return
+            }
+            if (isAllDone()) {
+                showPopUp(3)
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.computersMove()
+                if (self.checkColumns() || self.checkRows() || self.checkDiagonals()){
+                    self.showPopUp(2)
+                }
+            }
         }
         else{
             print("This cell has a sign already, try another one")
@@ -332,11 +457,22 @@ class MainViewController: UIViewController {
     @IBAction func twoZeroTapped(_ sender: Any) {
         if(twoZero.image(for: .normal) == nil){
             twoZero.setImage( UIImage.init(named: getSign()), for: .normal)
+            twoZero.accessibilityLabel = getSign()
             isChosenTwoZero = true
-            checkColumns()
-            checkRows()
-            checkDiagonals()
-            computersMove()
+            if (checkColumns() || checkRows() || checkDiagonals()){
+                showPopUp(1)
+                return
+            }
+            if (isAllDone()) {
+                showPopUp(3)
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.computersMove()
+                if (self.checkColumns() || self.checkRows() || self.checkDiagonals()){
+                    self.showPopUp(2)
+                }
+            }
         }
         else{
             print("This cell has a sign already, try another one")
@@ -349,11 +485,22 @@ class MainViewController: UIViewController {
     @IBAction func twoOneTapped(_ sender: Any) {
         if(twoOne.image(for: .normal) == nil){
             twoOne.setImage( UIImage.init(named: getSign()), for: .normal)
+            twoOne.accessibilityLabel = getSign()
             isChosenTwoOne = true
-            checkColumns()
-            checkRows()
-            checkDiagonals()
-            computersMove()
+            if (checkColumns() || checkRows() || checkDiagonals()){
+                showPopUp(1)
+                return
+            }
+            if (isAllDone()) {
+                showPopUp(3)
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.computersMove()
+                if (self.checkColumns() || self.checkRows() || self.checkDiagonals()){
+                    self.showPopUp(2)
+                }
+            }
         }
         else{
             print("This cell has a sign already, try another one")
@@ -366,11 +513,24 @@ class MainViewController: UIViewController {
     @IBAction func twoTwoTapped(_ sender: Any) {
         if(twoTwo.image(for: .normal) == nil){
             twoTwo.setImage( UIImage.init(named: getSign()), for: .normal)
+            twoTwo.accessibilityLabel = getSign()
             isChosenTwoTwo = true
-            checkColumns()
-            checkRows()
-            checkDiagonals()
-            computersMove()
+            if (checkColumns() || checkRows() || checkDiagonals()){
+                showPopUp(1)
+                return
+            }
+            if (isAllDone()) {
+                showPopUp(3)
+                return
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.computersMove()
+                if (self.checkColumns() || self.checkRows() || self.checkDiagonals()){
+                    self.showPopUp(2)
+                }
+                
+            }
         }
         else{
             print("This cell has a sign already, try another one")
