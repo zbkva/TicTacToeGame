@@ -21,12 +21,20 @@ class MainViewController: UIViewController {
     @IBOutlet weak var twoOne: UIButton!
     @IBOutlet weak var twoTwo: UIButton!
     var chosen = LandingViewController.choice
+    var isChosenZeroZero = false
+    var isChosenZeroOne = false
+    var isChosenZeroTwo = false
+    var isChosenOneZero = false
+    var isChosenOneOne = false
+    var isChosenOneTwo = false
+    var isChosenTwoZero = false
+    var isChosenTwoOne = false
+    var isChosenTwoTwo = false
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     func getSign() -> String {
@@ -38,8 +46,71 @@ class MainViewController: UIViewController {
         if !chosen {return "Cross"}
         else {return "Circle"}
     }
+    
     func getRand() -> Int {
         return Int.random(in: 1...9)
+    }
+    
+    //checks for the same sign in three possible columns
+    func checkColumns() {
+        if(
+            (
+            zeroZero.imageView?.image == UIImage(named: getSign()) &&
+            zeroOne.imageView?.image == UIImage(named: getSign()) &&
+            zeroTwo.imageView?.image == UIImage(named: getSign())
+            ) ||
+            (
+            oneZero.imageView?.image == UIImage(named: getSign()) &&
+            oneOne.imageView?.image == UIImage(named: getSign()) &&
+            oneTwo.imageView?.image == UIImage(named: getSign())
+            ) ||
+            (
+            twoZero.imageView?.image == UIImage(named: getSign()) &&
+            twoOne.imageView?.image == UIImage(named: getSign()) &&
+            twoTwo.imageView?.image == UIImage(named: getSign())
+            )
+        ){
+            print("Column Done")
+        }
+    }
+    
+    func checkRows() {
+        if(
+            (
+            zeroZero.imageView?.image == UIImage(named: getSign()) &&
+            oneZero.imageView?.image == UIImage(named: getSign()) &&
+            twoZero.imageView?.image == UIImage(named: getSign())
+            ) ||
+            (
+            zeroOne.imageView?.image == UIImage(named: getSign()) &&
+            oneOne.imageView?.image == UIImage(named: getSign()) &&
+            twoOne.imageView?.image == UIImage(named: getSign())
+            ) ||
+            (
+            zeroTwo.imageView?.image == UIImage(named: getSign()) &&
+            oneTwo.imageView?.image == UIImage(named: getSign()) &&
+            twoTwo.imageView?.image == UIImage(named: getSign())
+            )
+        ){
+            print("Row Done")
+        }
+    }
+    
+    func checkDiagonals() {
+        if(
+            (
+            zeroTwo.imageView?.image == UIImage(named: getSign()) &&
+            oneOne.imageView?.image == UIImage(named: getSign()) &&
+            twoZero.imageView?.image == UIImage(named: getSign())
+            ) ||
+            (
+            zeroZero.imageView?.image == UIImage(named: getSign()) &&
+            oneOne.imageView?.image == UIImage(named: getSign()) &&
+            twoTwo.imageView?.image == UIImage(named: getSign())
+            )
+        ){
+            print("Diagonal Done")
+        }
     }
     
     func computersMove() {
@@ -47,6 +118,7 @@ class MainViewController: UIViewController {
         if(rand == 1){
             if(zeroZero.image(for: .normal) == nil){
                 zeroZero.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                isChosenZeroZero = true
             }
             else {
                 computersMove()
@@ -56,6 +128,7 @@ class MainViewController: UIViewController {
         if(rand == 2){
             if(zeroOne.image(for: .normal) == nil){
                 zeroOne.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                isChosenZeroOne = true
             }
             else {
                 computersMove()
@@ -65,6 +138,7 @@ class MainViewController: UIViewController {
         if(rand == 3){
             if(zeroTwo.image(for: .normal) == nil){
                 zeroTwo.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                isChosenZeroTwo = true
             }
             else {
                 computersMove()
@@ -74,6 +148,7 @@ class MainViewController: UIViewController {
         if(rand == 4){
             if(oneZero.image(for: .normal) == nil){
                 oneZero.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                isChosenOneZero = true
             }
             else {
                 computersMove()
@@ -83,6 +158,7 @@ class MainViewController: UIViewController {
         if(rand == 5){
             if(oneOne.image(for: .normal) == nil){
                 oneOne.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                isChosenOneOne = true
             }
             else {
                 computersMove()
@@ -92,6 +168,7 @@ class MainViewController: UIViewController {
         if(rand == 6){
             if(oneTwo.image(for: .normal) == nil){
                 oneTwo.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                isChosenOneTwo = true
             }
             else {
                 computersMove()
@@ -101,6 +178,7 @@ class MainViewController: UIViewController {
         if(rand == 7){
             if(twoZero.image(for: .normal) == nil){
                 twoZero.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                isChosenTwoZero = true
             }
             else {
                 computersMove()
@@ -110,6 +188,7 @@ class MainViewController: UIViewController {
         if(rand == 8){
             if(twoOne.image(for: .normal) == nil){
                 twoOne.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                isChosenTwoOne = true
             }
             else {
                 computersMove()
@@ -119,6 +198,7 @@ class MainViewController: UIViewController {
         if(rand == 9){
             if(twoTwo.image(for: .normal) == nil){
                 twoTwo.setImage( UIImage.init(named: getComputersSign()), for: .normal)
+                isChosenTwoTwo = true
             }
             else {
                 computersMove()
@@ -146,9 +226,13 @@ class MainViewController: UIViewController {
     }
     
     
-    @IBAction func zeroZeroTapped(_ sender: Any) {
+    @IBAction func zeroZeroTapped(_ sender: UIButton) {
         if(zeroZero.image(for: .normal) == nil){
             zeroZero.setImage( UIImage.init(named: getSign()), for: .normal)
+            isChosenZeroZero = true
+            checkColumns()
+            checkRows()
+            checkDiagonals()
             computersMove()
         }
         else{
@@ -163,6 +247,10 @@ class MainViewController: UIViewController {
     @IBAction func zeroOneTapped(_ sender: Any) {
         if(zeroOne.image(for: .normal) == nil){
             zeroOne.setImage( UIImage.init(named: getSign()), for: .normal)
+            isChosenZeroOne = true
+            checkColumns()
+            checkRows()
+            checkDiagonals()
             computersMove()
         }
         else{
@@ -176,6 +264,10 @@ class MainViewController: UIViewController {
     @IBAction func zeroTwoTapped(_ sender: Any) {
         if(zeroTwo.image(for: .normal) == nil){
             zeroTwo.setImage( UIImage.init(named: getSign()), for: .normal)
+            isChosenZeroTwo = true
+            checkColumns()
+            checkRows()
+            checkDiagonals()
             computersMove()
         }
         else{
@@ -189,6 +281,10 @@ class MainViewController: UIViewController {
     @IBAction func oneZeroTapped(_ sender: Any) {
         if(oneZero.image(for: .normal) == nil){
             oneZero.setImage( UIImage.init(named: getSign()), for: .normal)
+            isChosenOneZero = true
+            checkColumns()
+            checkRows()
+            checkDiagonals()
             computersMove()
         }
         else{
@@ -202,6 +298,10 @@ class MainViewController: UIViewController {
     @IBAction func oneOneTapped(_ sender: Any) {
         if(oneOne.image(for: .normal) == nil){
             oneOne.setImage( UIImage.init(named: getSign()), for: .normal)
+            isChosenOneOne = true
+            checkColumns()
+            checkRows()
+            checkDiagonals()
             computersMove()
         }
         else{
@@ -215,6 +315,10 @@ class MainViewController: UIViewController {
     @IBAction func oneTwoTapped(_ sender: Any) {
         if(oneTwo.image(for: .normal) == nil){
             oneTwo.setImage( UIImage.init(named: getSign()), for: .normal)
+            isChosenOneTwo = true
+            checkColumns()
+            checkRows()
+            checkDiagonals()
             computersMove()
         }
         else{
@@ -228,6 +332,10 @@ class MainViewController: UIViewController {
     @IBAction func twoZeroTapped(_ sender: Any) {
         if(twoZero.image(for: .normal) == nil){
             twoZero.setImage( UIImage.init(named: getSign()), for: .normal)
+            isChosenTwoZero = true
+            checkColumns()
+            checkRows()
+            checkDiagonals()
             computersMove()
         }
         else{
@@ -241,6 +349,10 @@ class MainViewController: UIViewController {
     @IBAction func twoOneTapped(_ sender: Any) {
         if(twoOne.image(for: .normal) == nil){
             twoOne.setImage( UIImage.init(named: getSign()), for: .normal)
+            isChosenTwoOne = true
+            checkColumns()
+            checkRows()
+            checkDiagonals()
             computersMove()
         }
         else{
@@ -254,6 +366,10 @@ class MainViewController: UIViewController {
     @IBAction func twoTwoTapped(_ sender: Any) {
         if(twoTwo.image(for: .normal) == nil){
             twoTwo.setImage( UIImage.init(named: getSign()), for: .normal)
+            isChosenTwoTwo = true
+            checkColumns()
+            checkRows()
+            checkDiagonals()
             computersMove()
         }
         else{
